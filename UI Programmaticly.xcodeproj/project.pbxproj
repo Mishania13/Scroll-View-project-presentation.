@@ -9,23 +9,23 @@
 /* Begin PBXBuildFile section */
 		D62D4BB724693C9900D29B08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62D4BB624693C9900D29B08 /* AppDelegate.swift */; };
 		D62D4BB924693C9900D29B08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62D4BB824693C9900D29B08 /* SceneDelegate.swift */; };
-		D62D4BBB24693C9900D29B08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62D4BBA24693C9900D29B08 /* ViewController.swift */; };
-		D62D4BBE24693C9900D29B08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62D4BBC24693C9900D29B08 /* Main.storyboard */; };
-		D62D4BC124693C9900D29B08 /* UI_Programmaticly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D62D4BBF24693C9900D29B08 /* UI_Programmaticly.xcdatamodeld */; };
 		D62D4BC324693C9E00D29B08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D62D4BC224693C9E00D29B08 /* Assets.xcassets */; };
 		D62D4BC624693C9E00D29B08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62D4BC424693C9E00D29B08 /* LaunchScreen.storyboard */; };
+		D64A2ADB2469ACCC00970B79 /* SwipingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64A2ADA2469ACCC00970B79 /* SwipingVC.swift */; };
+		D64A2ADD2469B2CE00970B79 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64A2ADC2469B2CE00970B79 /* PageCell.swift */; };
+		D64A2ADF2469CCE300970B79 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64A2ADE2469CCE300970B79 /* Page.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D62D4BB324693C9900D29B08 /* UI Programmaticly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UI Programmaticly.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62D4BB624693C9900D29B08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D62D4BB824693C9900D29B08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D62D4BBA24693C9900D29B08 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D62D4BBD24693C9900D29B08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D62D4BC024693C9900D29B08 /* UI_Programmaticly.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UI_Programmaticly.xcdatamodel; sourceTree = "<group>"; };
 		D62D4BC224693C9E00D29B08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D62D4BC524693C9E00D29B08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D62D4BC724693C9E00D29B08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D64A2ADA2469ACCC00970B79 /* SwipingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingVC.swift; sourceTree = SOURCE_ROOT; };
+		D64A2ADC2469B2CE00970B79 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		D64A2ADE2469CCE300970B79 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +60,12 @@
 			children = (
 				D62D4BB624693C9900D29B08 /* AppDelegate.swift */,
 				D62D4BB824693C9900D29B08 /* SceneDelegate.swift */,
-				D62D4BBA24693C9900D29B08 /* ViewController.swift */,
-				D62D4BBC24693C9900D29B08 /* Main.storyboard */,
+				D64A2ADC2469B2CE00970B79 /* PageCell.swift */,
+				D64A2ADA2469ACCC00970B79 /* SwipingVC.swift */,
+				D64A2ADE2469CCE300970B79 /* Page.swift */,
 				D62D4BC224693C9E00D29B08 /* Assets.xcassets */,
 				D62D4BC424693C9E00D29B08 /* LaunchScreen.storyboard */,
 				D62D4BC724693C9E00D29B08 /* Info.plist */,
-				D62D4BBF24693C9900D29B08 /* UI_Programmaticly.xcdatamodeld */,
 			);
 			path = "UI Programmaticly";
 			sourceTree = "<group>";
@@ -130,7 +130,6 @@
 			files = (
 				D62D4BC624693C9E00D29B08 /* LaunchScreen.storyboard in Resources */,
 				D62D4BC324693C9E00D29B08 /* Assets.xcassets in Resources */,
-				D62D4BBE24693C9900D29B08 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,9 +140,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D62D4BBB24693C9900D29B08 /* ViewController.swift in Sources */,
+				D64A2ADB2469ACCC00970B79 /* SwipingVC.swift in Sources */,
+				D64A2ADD2469B2CE00970B79 /* PageCell.swift in Sources */,
+				D64A2ADF2469CCE300970B79 /* Page.swift in Sources */,
 				D62D4BB724693C9900D29B08 /* AppDelegate.swift in Sources */,
-				D62D4BC124693C9900D29B08 /* UI_Programmaticly.xcdatamodeld in Sources */,
 				D62D4BB924693C9900D29B08 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,14 +151,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D62D4BBC24693C9900D29B08 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D62D4BBD24693C9900D29B08 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D62D4BC424693C9E00D29B08 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -342,19 +334,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		D62D4BBF24693C9900D29B08 /* UI_Programmaticly.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				D62D4BC024693C9900D29B08 /* UI_Programmaticly.xcdatamodel */,
-			);
-			currentVersion = D62D4BC024693C9900D29B08 /* UI_Programmaticly.xcdatamodel */;
-			path = UI_Programmaticly.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = D62D4BAB24693C9900D29B08 /* Project object */;
 }
