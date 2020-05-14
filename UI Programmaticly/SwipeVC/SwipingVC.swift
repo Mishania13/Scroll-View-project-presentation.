@@ -9,11 +9,13 @@
 import UIKit
 class SwipingVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    
+    
     let pages = [Page(imageName: "First", headerText: "Project idea", bodyText: "In this slide we must show main project idea"),
                  Page(imageName: "Second", headerText: "Strong sides", bodyText: "There we talk about idea strong sides"),
                  Page(imageName: "Third", headerText: "Customer motivation", bodyText: "Need show customer advantages of early birds"),
                  Page(imageName: "Fourth", headerText: "Thank for stay with us", bodyText: "Thank for you attention. Hope to see soon")]
- 
+    
     private let bottomControllContainer: UIStackView = {
         
         let view = UIStackView()
@@ -31,7 +33,7 @@ class SwipingVC: UICollectionViewController, UICollectionViewDelegateFlowLayout 
         view.setTitleColor(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addTarget(self, action: #selector(goToPrevPage), for: .touchUpInside)
-
+        
         return view
     }()
     
@@ -47,9 +49,9 @@ class SwipingVC: UICollectionViewController, UICollectionViewDelegateFlowLayout 
         
         return view
     }()
-
     
-    private lazy var pageController: UIPageControl = {
+    
+    lazy var pageController: UIPageControl = {
         
         let view = UIPageControl()
         view.currentPage = 0
@@ -59,7 +61,8 @@ class SwipingVC: UICollectionViewController, UICollectionViewDelegateFlowLayout 
         
         return view
     }()
-       
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,10 +73,10 @@ class SwipingVC: UICollectionViewController, UICollectionViewDelegateFlowLayout 
         
         collectionView.register(PageCell.self, forCellWithReuseIdentifier: "cellID")
         setUpBottomControll()
-
     }
     
-//MARK:- Button funcs
+    
+    //MARK:- Button funcs
     
     @objc private func goNextPage() {
         
@@ -86,56 +89,28 @@ class SwipingVC: UICollectionViewController, UICollectionViewDelegateFlowLayout 
     }
     
     @objc private func goToPrevPage() {
-          
-          let nextIndex = max(pageController.currentPage - 1 , 0)
-          let indexPath = IndexPath(item: nextIndex, section: 0)
-          collectionView.scrollToItem(at: indexPath,
-                                      at: .centeredHorizontally,
-                                      animated: true)
-          pageController.currentPage = nextIndex
-      }
+        
+        let nextIndex = max(pageController.currentPage - 1 , 0)
+        let indexPath = IndexPath(item: nextIndex, section: 0)
+        collectionView.scrollToItem(at: indexPath,
+                                    at: .centeredHorizontally,
+                                    animated: true)
+        pageController.currentPage = nextIndex
+    }
     
-//    MARK: - View setup
+    //    MARK: - View setup
     
     private func setUpBottomControll() {
-          
-           self.bottomControllContainer.addArrangedSubview(self.previousButton)
-           self.bottomControllContainer.addArrangedSubview(self.pageController)
-           self.bottomControllContainer.addArrangedSubview(self.nextButton)
         
-       NSLayoutConstraint.activate([
-        bottomControllContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-        bottomControllContainer.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-        bottomControllContainer.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-        bottomControllContainer.heightAnchor.constraint(equalToConstant: 50)
+        self.bottomControllContainer.addArrangedSubview(self.previousButton)
+        self.bottomControllContainer.addArrangedSubview(self.pageController)
+        self.bottomControllContainer.addArrangedSubview(self.nextButton)
+        
+        NSLayoutConstraint.activate([
+            bottomControllContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            bottomControllContainer.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            bottomControllContainer.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            bottomControllContainer.heightAnchor.constraint(equalToConstant: 50)
         ])
-       }
-    
-  //Scroll view setup
-    
-    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        
-        pageController.currentPage = Int(targetContentOffset.pointee.x/view.frame.width)
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pages.count
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! PageCell
-        
-        let page = pages[indexPath.item]
-        cell.page = page
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: view.frame.width, height: view.frame.height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
     }
 }
